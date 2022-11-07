@@ -1,3 +1,28 @@
+#Explanation
+
+
+- Sorting using Bubble sort
+
+Explanation:
+
+In the selection sort algorithm, initially, it compares  the first element with the current  element and after that it swaps the value if smaller than tha first element.
+
+Test Cases:
+
+1. Check if we are inserting any value or not.
+2. Check array should not be sorted
+
+Example
+
+Input: [4, 1, 3, 9, 7]
+
+Output: [1, 3, 4, 7, 9 ]
+
+
+#Explanation END
+
+
+
 package vaibhav;
 
 public class Strings {
@@ -5,13 +30,13 @@ public class Strings {
 	public static void bubble(int arr[]){
 		int n = arr.length;
 		for(int i=0; i<=n-2;i++) {
-			int swap = 0;
+			
 			for(int j=0; j<=n-2-i; j++) {
 				if(arr[j] > arr[j+1]) {
 					int temp = arr[j];
 					arr[j] = arr[j+1];
 					arr[j+1] = temp;
-					swap ++;
+			
 				}
 			}
 			System.out.println(swap);
@@ -28,9 +53,17 @@ public class Strings {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int arr[] = {1,2,3,4,5};
+		int arr[] = {4, 1, 3, 9, 7};
+		if(arr.length<=1)
+		{
+			System.out.print("invalid input");
+			}
+		else {
+			
+		
 		bubble(arr);
 		print(arr);
+		}
 	}
 
 }
