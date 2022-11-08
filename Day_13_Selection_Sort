@@ -3,6 +3,7 @@
 
 - Sorting using Selection sort
 
+
 Explanation:
 
 In the selection sort algorithm, initially, it takes the first element as the smallest element and after that, it compares it with another element if the next element is lesser than the selected element then these two elements are swapped.
