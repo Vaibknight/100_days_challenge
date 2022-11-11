@@ -1,0 +1,52 @@
+
+
+Explanation:
+
+In this program, we check each character of a string if it contains vowels or not if it contains vowels then we increase the count, and last we display the vowels and count.
+
+Test Cases:
+
+1. if two vowels are the same
+
+Example
+
+Input: Vit Bhopal University
+
+Output: [i o a u i e i]
+Number of Vowels in the string: 7
+
+
+#Program
+
+package vaibhav;
+
+import java.util.*;
+
+
+
+public class test {
+	
+	static int count_Vowels(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i'
+                    || str.charAt(i) == 'o' || str.charAt(i) == 'u') {
+                count++;
+                System.out.print(str.charAt(i) + " ");
+            }
+        }
+        return count;
+    }
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the string: ");
+        String str = sc.nextLine();
+        str = str.toLowerCase();
+        System.out.print("\nNumber of  Vowels in the string: " + count_Vowels(str) + "\n");
+	}
+}
+	
+
+
