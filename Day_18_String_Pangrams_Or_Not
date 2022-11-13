@@ -1,0 +1,59 @@
+
+
+what is pangram?
+A pangram is a string that contains every letter of the alphabet.
+
+Test Cases:
+1) if the string is a numerical or special character
+
+Explanation:
+
+       In this program, we first take one string that contains all alphabets and after that, we convert this string into a character array. we take one another string as input we have to check whether this string is a pangram or not and then we convert this string into lowercase.
+
+After that, we take one foreach loop for the character array and check if the input string contains that character if the string did not contain that character then we change the result variable to not pangram and return this result.
+ 
+
+Example
+
+Input: We promptly judged antique ivory buckles for the next prize
+
+Output: pangram
+
+#Program  
+
+package vaibhav;
+
+import java.util.*;
+
+class Result {
+    public static String pangrams(String s) {
+    String result = "pangram";
+    String slower = s.toLowerCase();
+    String alpha = "abcdefghijklmnopqrstuvwxyz";
+    char[] alphaarr = alpha.toCharArray();
+    for(char c : alphaarr){
+        String ss = String.valueOf(c);
+        if(!slower.contains(ss)){
+            result = "not pangram";
+            return result;
+        }
+    }
+    return result;
+    }
+}
+
+public class test {
+	
+	
+
+	public static void main(String[] args)  {
+		Scanner sc = new Scanner(System.in);
+        System.out.println("enter the string : ");
+        String s = sc.nextLine();
+
+        String result = Result.pangrams(s);
+        System.out.println("String is "+result);
+    }
+}
+	
+
