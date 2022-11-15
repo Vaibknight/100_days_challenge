@@ -1,0 +1,50 @@
+#Explanation
+
+
+- Check whether the array is Sorted or not using Recusion
+
+
+Explanation:
+
+a program to check if it is sorted in ascending order or not. Equal values are allowed in an array and two consecutive equal values are considered sorted.
+
+Test Cases
+1) If array is unsorted.
+
+
+Example
+
+Input -
+n = {1,2,3,4,5}
+
+Output -
+True
+
+
+#Explanation END
+
+
+package vaibhav;
+
+import java.util.*;
+
+public class Recursive_Array {
+	
+	public static Boolean isSorted(int arr[],int i) {
+		if(i == arr.length-1) {
+			return true;
+		}
+		if(arr[i] > arr[i+1]) {
+			return false;
+		}
+		
+		return isSorted(arr, i+1);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]= {1,2,3,4,5};
+		System.out.println(isSorted(arr,0));
+	}
+
+}
