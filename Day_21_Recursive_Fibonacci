@@ -1,0 +1,52 @@
+#Explanation
+
+
+- Check whether the array is Sorted or not using Recusion
+
+
+Explanation:
+
+In fibonacci series, next number is the sum of previous two numbers for example 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 etc. The first two numbers of fibonacci series are 0 and 1.
+
+Test Cases
+1) If there is a negative no.
+
+
+Example
+
+Input -
+n = 15
+
+Output -
+610
+
+
+#Explanation END
+
+
+package vaibhav;
+
+public class Recursive_Fibonacci {
+	
+	public static int fib(int n) {
+		if(n == 0 || n==1) {
+			return n;
+		}
+		
+		else if(n < 0) {
+			return -1;
+		}
+		int fibn1 = fib(n-1);
+		int fibn2 = fib(n-2);
+		
+		int fn = fib(n-1) + fib(n-2);
+		
+		return fn;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n = 15;
+		System.out.println(fib(n));
+	}
+
+}
