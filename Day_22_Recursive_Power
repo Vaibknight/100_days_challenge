@@ -1,0 +1,45 @@
+#Explanation
+
+
+- Print fibonacci n numbers
+
+
+Explanation:
+
+In this Program , we can calculate power of n numbers using recursion
+
+Test Cases
+1) If there is a negative no.
+
+
+Example
+
+Input -
+x = 2 , n = 10
+
+Output -
+1024
+
+
+#Explanation END
+
+
+package vaibhav;
+
+public class Recursive_Power {
+	
+	public static int power(int x, int n) {
+		if(n == 0) {
+			return 1;
+		}
+		int xnm1 = power(x,n-1);
+		  return x * power(x,n-1);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(power(2,10));
+	}
+
+}
