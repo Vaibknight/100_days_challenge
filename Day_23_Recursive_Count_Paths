@@ -1,0 +1,58 @@
+#Explanation
+
+
+- Count all possible paths from top left to bottom right of a mXn matrix
+
+
+Explanation:
+
+The problem is to count all the possible paths from top left to bottom right of a mXn matrix with the constraints that from each cell you can either move only to right or down.
+Let NumberOfPaths(m, n) be the count of paths to reach row number m and column number n in the matrix, NumberOfPaths(m, n) can be recursively
+
+Test Cases
+1) If there is a negative no.
+
+
+Example
+
+Input -
+n = 2 , m = 2
+
+Output -
+6
+
+
+#Explanation END
+
+
+package vaibhav;
+
+public class Recursive_CountPaths {
+	
+	public static int count(int i, int j, int n , int m) {
+		
+		if(i == n || j == m) {
+			return 0;
+		}
+		
+		if(i == n-1 || j == m-1) {
+			return 1;
+		}
+		
+		int downPath = count(i+1,j,n,m);
+		
+		// rightpath
+		
+		int rightPath = count(i,j+1,n,m);
+		 
+		 return downPath + rightPath;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n = 3, m = 3;
+		int totalPaths = count(0,0,n,m);
+		System.out.println(totalPaths);
+	}
+
+}
