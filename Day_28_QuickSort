@@ -1,0 +1,88 @@
+#Explanation
+
+
+
+- QuickSort
+
+
+Explanation:
+
+The key process in quickSort is a partition(). The target of partitions is, given an array and an element x of an array as the pivot, 
+put x at its correct position in a sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x.
+All this should be done in linear time.
+
+
+
+
+Test Case -
+If there is a negative value in array
+
+Example
+
+arr = 6,3,9,8,2,5
+
+Output -
+
+2 3 5 6 8 9 
+
+
+#Explanation END
+
+
+package vaibhav;
+
+public class quick_sort {
+	
+	public static void print(int arr[]) {
+		for(int i=0; i<=arr.length-1; i++) {
+			System.out.print(arr[i]+" ");
+		}
+	}
+	
+	public static void quickSort(int arr[], int si, int ei) {
+		
+		if(si >= ei) {
+			return;
+		}
+		
+		
+		int pdx = partition(arr,si,ei);
+		
+		quickSort(arr,si,pdx-1); //For left Part
+		quickSort(arr,pdx+1,ei); //For left Part
+	}
+	
+	public  static int partition(int arr[], int si, int ei) {
+		
+		int pivot = arr[ei];
+		int i = si-1;
+		
+		for(int j=si; j<ei;j++) {
+			
+			if(arr[j] <= pivot) {
+				i++;
+				
+				int temp = arr[j];
+				arr[j] = arr[i];
+				arr[i] = temp;
+			}
+		}
+		
+		i++;
+		
+		int temp = pivot;
+		arr[ei] = arr[i];
+		arr[i] = temp;
+		
+		return i;
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[] = {6,3,9,8,2,5};
+		quickSort(arr,0,arr.length-1);
+		print(arr);
+	}
+
+}
