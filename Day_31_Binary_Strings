@@ -1,0 +1,53 @@
+#Explanation
+
+
+
+- Generate all binary strings without consecutive 1’s
+
+
+Explanation:
+
+Idea behind that is IF string ends with ‘1’ then we put only ‘0’ at the end.
+ IF string ends with ‘0’ then we put both ‘0’ and ‘1’ at the end of string for generating new string
+
+
+
+
+Test Case -
+If the element is negative
+
+Example
+
+Input : K = 3  
+
+
+Output : 000 , 001 , 010 , 100 , 101 
+
+
+#Explanation END
+
+
+package vaibhav;
+
+public class Recursive_Binary_Strings {
+	
+	public static void bin(int n, int lastPlace, String str) {
+		
+		if(n == 0) {
+			System.out.println(str);
+			return;
+		}
+		
+		bin(n-1,0,str+"0");
+		
+		if(lastPlace == 0) {
+			bin(n-1,1,str+"1");
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		bin(3,0,"");
+	}
+
+}
