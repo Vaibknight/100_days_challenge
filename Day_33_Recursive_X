@@ -11,10 +11,6 @@ Given a string s, our task is to move all the occurrence of letter x to the end 
 
 
 
-
-Test Case -
-If the array is sorted
-
 Example
 
 Input : str = "axxbcxd"
