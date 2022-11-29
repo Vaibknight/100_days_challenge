@@ -1,0 +1,49 @@
+#Explanation
+
+
+
+- Swing
+
+
+Explanation:
+
+ In this Program , I've just implemented button and 2 text feilds using JButton & JTextField
+
+
+#Explanation END
+
+
+package vaibhav;
+
+import javax.swing.*;
+
+public class Swings {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		JFrame j = new JFrame();
+		JTextField t1 = new JTextField("Text Field 1");
+		t1.setBounds(50,100, 200,30);  
+		JTextField t2 = new JTextField("Text Field 2");
+		t2.setBounds(50,150, 200,30);  
+		JButton f = new JButton("click");
+		f.setBounds(100,200,100,40);
+		
+		j.add(t1);
+		j.add(t2);
+		j.add(f);
+		
+		
+		j.setSize(300,400);
+		j.setLayout(null);
+		j.setVisible(true);
+		
+		
+//		j.setSize(400,300);
+//		j.setVisible(true);
+		
+		
+	}
+
+}
