@@ -1,0 +1,148 @@
+#Explanation
+
+
+
+- Calculator using Swing
+
+
+Explanation:
+
+ In this Program , I've just implemented a calculator using swing added sum, sub , multi & div in it.
+ If we give 2 inputs we get the answers from this function.
+ 
+#Explanation END
+
+
+package vaibhav;
+
+import java.awt.event.*;  
+import javax.swing.*;
+
+public class Swings {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		JFrame j = new JFrame();
+		final JTextField t1 = new JTextField();
+		t1.setBounds(50,50, 200,30);  
+		
+		final JTextField t2 = new JTextField();
+		t2.setBounds(50,150, 200,30);  
+		
+		final JLabel l1 = new JLabel("Enter the 1st Value");
+		l1.setBounds(10,10,300,30);
+		
+		final JLabel l2 = new JLabel("Enter the 2nd Value");
+		l2.setBounds(10,100 ,300,30);
+		
+		final JLabel l3 = new JLabel("--");
+		l3.setBounds(10,300,300,30);
+		
+		JButton f = new JButton("Sum");
+		f.setBounds(50,200,70,40);
+		
+		JButton s = new JButton("Sub");
+		s.setBounds(150,200,70,40);
+		
+		JButton m = new JButton("Multi");
+		m.setBounds(50,250,70,40);
+		
+		JButton d = new JButton("Div");
+		d.setBounds(150,250,70,40);
+		
+		f.addActionListener(new ActionListener(){  
+		public void actionPerformed(ActionEvent e){  
+		String s1 = t1.getText();
+		String s2 = t2.getText();
+		
+		if(s1.isEmpty() || s2.isEmpty()) {
+			l3.setText("Please Enter The Data");
+		}
+		else {
+			int a = Integer.parseInt(s1);
+			int b = Integer.parseInt(s2);
+			int c = a+b;
+			String result = String.valueOf(c);
+			l3.setText("Total "+result);
+		}
+			        }  
+	});  
+		
+		s.addActionListener(new ActionListener(){  
+			public void actionPerformed(ActionEvent e){  
+			String s1 = t1.getText();
+			String s2 = t2.getText();
+			
+			if(s1.isEmpty() || s2.isEmpty()) {
+				l3.setText("Please Enter The Data");
+			}
+			else {
+				int a = Integer.parseInt(s1);
+				int b = Integer.parseInt(s2);
+				int c = a-b;
+				String result = String.valueOf(c);
+				l3.setText("Total "+result);
+			}
+				        }  
+		});
+		
+		m.addActionListener(new ActionListener(){  
+			public void actionPerformed(ActionEvent e){  
+			String s1 = t1.getText();
+			String s2 = t2.getText();
+			
+			if(s1.isEmpty() || s2.isEmpty()) {
+				l3.setText("Please Enter The Data");
+			}
+			else {
+				int a = Integer.parseInt(s1);
+				int b = Integer.parseInt(s2);
+				int c = a*b;
+				String result = String.valueOf(c);
+				l3.setText("Total "+result);
+			}
+				        }  
+		});
+		
+		d.addActionListener(new ActionListener(){  
+			public void actionPerformed(ActionEvent e){  
+			String s1 = t1.getText();
+			String s2 = t2.getText();
+			
+			if(s1.isEmpty() || s2.isEmpty()) {
+				l3.setText("Please Enter The Data");
+			}
+			else {
+				int a = Integer.parseInt(s1);
+				int b = Integer.parseInt(s2);
+				int c = a/b;
+				String result = String.valueOf(c);
+				l3.setText("Total "+result);
+			}
+				        }  
+		});
+		
+		j.add(t1);
+		j.add(t2);
+		j.add(f);
+		j.add(s);
+		j.add(m);
+		j.add(d);
+		j.add(l1);
+		j.add(l2);
+		j.add(l3);
+		
+		
+		j.setSize(300,400);
+		j.setLayout(null);
+		j.setVisible(true);
+		
+		
+//		j.setSize(400,300);
+//		j.setVisible(true);
+		
+		
+	}
+
+}
