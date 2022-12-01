@@ -1,0 +1,58 @@
+#Explanation
+
+
+
+- Tower of Hanoi 
+
+
+Explanation:
+
+Tower of Hanoi is a mathematical puzzle where we have three rods (A, B, and C) and N disks. Initially, all the disks are stacked in decreasing value of diameter i.e., 
+the smallest disk is placed on the top and they are on rod A. The objective of the puzzle is to move the entire stack to another rod (here considered C), 
+
+
+
+
+
+Example
+
+Input :
+n = 3;
+
+
+Output :  
+transfer 1 from S to D
+transfer 2 from S to H
+transfer 1 from D to H
+transfer 3 from S to D
+transfer 1 from H to S
+transfer 2 from H to D
+transfer 1 from S to D
+
+
+#Explanation END
+
+
+package vaibhav;
+
+public class hanoi {
+	
+	public static void tower(int n, String src, String help, String dest) {
+		
+		if(n == 1) {
+			System.out.println("transfer "+n+" from "+src+" to "+dest);
+			return;
+		}
+		
+		tower(n-1, src, dest, help);
+		System.out.println("transfer "+n+" from "+src+" to "+dest);
+		tower(n-1,help,src,dest);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n = 3;
+		tower(n,"S","H","D");
+	}
+
+}
