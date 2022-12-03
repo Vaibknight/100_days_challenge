@@ -1,0 +1,42 @@
+#Explanation
+
+
+
+- Print N Numbers Using recursion
+
+
+
+Example
+
+Input :
+ n = 10;
+
+
+Output :  
+10 9 8 7 6 5 4 3 2 1
+
+#Explanation END
+
+
+package vaibhav;
+
+import java.util.*;
+
+public class RecusionBasics {
+	
+	public static void recurse(int n) {
+		if(n == 1) {
+			System.out.println(n);
+			return;
+		}
+		System.out.print(n+" ");
+		recurse(n-1);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n = 10;
+		recurse(n);
+	}
+
+}
