@@ -1,0 +1,66 @@
+#Explanation
+
+
+
+- Postfix to Infix
+
+
+Explanation:
+
+For converting Postfix to infix we use a stack . The stack helps us store the operands. Whenever an operator is found , we pop two operands from the stack and push a new operand ,
+which is the result of the current operator on the popped operands, into the stack with parenthesis . The final element at the top of the stack will be our infix expression .
+
+
+
+
+Test Case -
+If operand comes first
+
+Example
+
+Input : "AB+CDE+**"
+
+
+Output : ((A+B)*(C*(D+E)))
+
+
+
+#Explanation END
+
+
+package vaibhav;
+
+
+import java.util.*;
+
+public class test {
+	
+	static boolean isOperand(char x)
+	{
+	return (x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z');
+	}
+	static String postfixToInfix(String postfix_exp){
+	Stack<String> s = new Stack<String>();
+	for(int i = 0; i<postfix_exp.length(); i++)
+	{
+	if(isOperand(postfix_exp.charAt(i))){
+	s.push(postfix_exp.charAt(i) + "");
+	}
+	else
+	{
+	String op1 = s.peek();
+	s.pop();
+	String op2 = s.peek();
+	s.pop();
+	s.push("(" + op2 + postfix_exp.charAt(i) + op1 + ")");
+	}
+	}
+	return s.peek();
+	}
+	public static void main(String args[]){
+	String postfix_exp = "AB+CDE+**";
+	System.out.println(""+postfixToInfix(postfix_exp));
+	}
+
+
+}
