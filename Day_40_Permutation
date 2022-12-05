@@ -1,0 +1,65 @@
+#Explanation
+
+
+
+- Write a program to print all Permutations of given String
+
+
+Explanation:
+
+Given a string S, the task is to write a program to print all permutations of a given string. 
+
+A permutation also called an “arrangement number” or “order,” is a rearrangement of the elements of an ordered list S into a one-to-one correspondence with S itself.
+A string of length N has N! permutations. 
+
+
+
+
+Test Case -
+If string is empty
+
+Example
+
+Input : 
+str = "abc"
+
+
+Output :
+abc
+acb
+bac
+bca
+cab
+cba
+
+
+
+
+#Explanation END
+
+
+package vaibhav;
+
+public class Recursive_Permutation {
+	
+	public static void perm(String str, String Permutation) {
+		if(str.length() == 0) {
+			System.out.println(Permutation);
+			return;
+		}
+		
+		for(int i=0; i<str.length();i++) {
+			char currChar = str.charAt(i);
+			
+			String newStr = str.substring(0,i) + str.substring(i+1);
+			perm(newStr,Permutation+currChar);
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "abc";
+		perm(str,"");
+	}
+
+}
