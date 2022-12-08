@@ -1,0 +1,58 @@
+#Explanation
+
+
+
+- Remove all consecutive duplicates from the string
+
+
+Explanation:
+
+Given a string S, The task is to remove all the consecutive duplicate characters of the string and return the resultant string. 
+If the string is not empty compare the adjacent characters of the string. If they are the same then shift the characters one by one to the left.
+Call recursion on string S otherwise, call recursion from S+1 string.
+
+
+Example
+
+Input:
+str = "apnacollege"
+
+Output :
+
+apncoleg
+
+
+#Explanation END
+
+
+package vaibhav;
+
+import java.util.*;
+
+public class Recurisve_String_remove {
+	
+	public static void duplicates(String str, int idx, StringBuilder s1, boolean map[]) {
+		
+		if(idx == str.length()) {
+			System.out.println(s1);
+			return;
+		}
+		
+		char curr = str.charAt(idx);
+		if(map[curr- 'a'] == true) {
+			
+			duplicates(str, idx +1, s1, map);
+		}
+		else {
+			map[curr- 'a'] = true;
+			duplicates( str, idx + 1, s1.append(curr), map);
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "apnacollege";
+		duplicates(str,0,new StringBuilder(""),new boolean [26]);
+	}
+
+}
