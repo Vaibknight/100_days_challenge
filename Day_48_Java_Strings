@@ -1,0 +1,60 @@
+#Explanation
+
+
+- Given a double-precision number, , denoting an amount of money, use the NumberFormat class' getCurrencyInstance method to convert  into the US, Indian, Chinese, and French currency formats. Then print the formatted values as follGiven two strings of lowercase English letters,  and , perform the following operations:
+
+1.Sum the lengths of  and .
+2.Determine if  is lexicographically larger than  (i.e.: does  come before  in the dictionary?).
+3.Capitalize the first letter in  and  and print them on a single line, separated by a space.ows:
+
+
+
+Example
+
+Input -
+
+hello
+java
+
+Output -
+
+9
+No
+Hello Java
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String B=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        // for(int i=1; i<A.length();i++){
+        //     System.out.println(i);
+        // }
+        int C = A.length()+B.length();
+        System.out.println(C);
+       
+    //    int G = A.compareTo(B);
+    //    System.out.println(G);
+        
+        if(A.compareTo(B) > 0){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+        
+       String D = Character.toUpperCase(A.charAt(0)) + A.substring(1);
+       String E = Character.toUpperCase(B.charAt(0)) + B.substring(1);
+        System.out.println(D+" "+E);
+    }
+}
+
+
+
