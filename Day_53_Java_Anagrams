@@ -1,0 +1,42 @@
+#Explanation
+
+
+- Two strings,  and , are called anagrams if they contain all the same characters in the same frequencies. For this challenge, the test is not case-sensitive. For example, the anagrams of CAT are CAT, ACT, tac, TCA, aTC, and CtA.
+
+
+
+Example
+
+Input -
+
+anagram
+margana
+
+Output -
+
+Anagrams
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        int n = A.length();
+        /* Enter your code here. Print output to STDOUT. */
+        String rev = "";
+        for(int i=A.length()-1; i>=0;i--){
+            rev+=A.charAt(i);
+        }
+        if(A.equals(rev)){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+    }
+}
