@@ -1,0 +1,61 @@
+#Explanation
+
+
+- Given a string of text in a tag-based language, parse this text and retrieve the contents enclosed within sequences of well-organized tags meeting 
+
+
+
+
+Example
+
+Input -
+
+4
+<h1>Nayeem loves counseling</h1>
+<h1><h1>Sanjay has no watch</h1></h1><par>So wait for a while</par>
+<Amee>safat codes like a ninja</amee>
+<SA premium>Imtiaz has a secret crush</SA premium>
+
+Output -
+
+Nayeem loves counseling
+Sanjay has no watch
+So wait for a while
+None
+Imtiaz has a secret crush
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution{
+	public static void main(String[] args){
+		
+		Scanner in = new Scanner(System.in);
+		int testCases = Integer.parseInt(in.nextLine());
+		while(testCases>0){
+			String line = in.nextLine();
+		    // line = line.replaceAll("<[^>]*>", "");
+            boolean ma = false;
+            Pattern p = Pattern.compile("<(.+)>([^<]+)</\\1>");
+            Matcher m = p.matcher(line);
+            
+            while(m.find()){
+                System.out.println(m.group(2));
+                ma = true;
+                
+                
+            }
+            if(!ma){
+                    System.out.println("None");
+                }
+          	//Write your code here
+			
+			testCases--;
+		}
+        
+	}
+}
