@@ -1,0 +1,43 @@
+#Explanation
+
+
+- In this problem, you have to add and multiply huge numbers! These numbers are so big that you can't contain them in any ordinary data types like a long integer.
+
+
+
+
+
+Example
+
+Input -
+
+1234
+20
+
+Output -
+
+1254
+24680
+
+import java.io.*;
+import java.util.*;
+import java.math.BigInteger;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner sc = new Scanner(System.in);
+        
+        BigInteger b1 = new BigInteger(sc.next());
+        BigInteger b2 = new BigInteger(sc.next());
+        
+        BigInteger sum = b1.add(b2);
+        
+        BigInteger product = b1.multiply(b2);
+        
+        System.out.println(sum);
+        System.out.println(product);
+    }
+}
